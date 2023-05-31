@@ -1,0 +1,19 @@
+.container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#form{
+    display: flex;
+    flex-direction: column;
+    background-color: #27374D;
+    padding:2rem;
+    width: 50%;
+}
+.formItem{
+    margin:0.4rem;
+}
+#login{
+    background-color: #DDE6ED;
+}
