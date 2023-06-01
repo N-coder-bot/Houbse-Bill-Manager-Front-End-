@@ -24,7 +24,7 @@ function Login() {
     <div className={styles.container}>
       <form onSubmit={handleSubmit} id={styles.form}>
         <label htmlFor="username" className={styles.formItem}>
-          Username
+          USERNAME
         </label>
         <input
           type="text"
@@ -33,7 +33,7 @@ function Login() {
           className={styles.formItem}
         />
         <label htmlFor="password" className={styles.formItem}>
-          Password
+          PASSWORD
         </label>
         <input
           type="password"
@@ -42,7 +42,7 @@ function Login() {
           className={styles.formItem}
         />
         <button type="submit" id={styles.login} className={styles.formItem}>
-          Login
+          LOGIN
         </button>
       </form>
     </div>
