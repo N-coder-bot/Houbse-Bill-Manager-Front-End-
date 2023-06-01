@@ -10,10 +10,32 @@
     background-color: #27374D;
     padding:2rem;
     width: 50%;
+    transition: all 0.3s;
+
 }
+
 .formItem{
-    margin:0.4rem;
+    margin:0.2rem;
+    color:#9DB2BF;
 }
 #login{
     background-color: #DDE6ED;
+    color:#27374D;
+    transition: all 0.3s;
+}
+#login:hover {
+    cursor: pointer;
+    color:#DDE6ED;
+    font-weight: bold;
+    background-color: #526D82;
+    -webkit-box-shadow: 16px 7px 0px 0px rgba(221,230,237,1);
+    -moz-box-shadow: 16px 7px 0px 0px rgba(221,230,237,1);
+    box-shadow: 16px 7px 0px 0px rgba(221,230,237,1);
+}
+#name ,#password {
+    color:black;
+    border:none;
+    outline: none;
+    padding:0.4rem;
+    border-radius: 0.1rem;
 }
