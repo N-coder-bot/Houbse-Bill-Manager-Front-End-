@@ -12,7 +12,7 @@ function Signup() {
       data
     );
     //add throw and catch statements later...
-    alert("account created successfully!");
+    alert("account created successfully! please login to continue...");
     window.location.href = `/login`;
   };
   return (
