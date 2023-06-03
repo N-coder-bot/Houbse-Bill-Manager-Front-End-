@@ -1,25 +1,33 @@
 import styles from "./Login.module.css";
 import axios from "axios";
+import { useState, useContext } from "react";
+import { AuthContext } from "../../AuthContext";
+
 function Login() {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const { isAuthenticated } = useContext(AuthContext);
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     try {
       const data = {
-        username: event.target.username.value,
-        password: event.target.password.value,
+        username: username,
+        password: password,
       };
-      //   console.log(JSON.stringify(data));
       const response = await axios.post(
-        "http://localhost:8000/users/user/login/password",
-        data
+        "http://localhost:8000/users/login/password",
+        data,
+        { withCredentials: true }
       );
-      console.log(response.data);
+      console.log(response);
       window.location.href = `/user/${response.data.user.username}`;
     } catch (err) {
       console.log(err);
     }
   };
+
   return (
     <div className={styles.container}>
       <form onSubmit={handleSubmit} id={styles.form}>
@@ -31,6 +39,8 @@ function Login() {
           name="username"
           id={styles.name}
           className={styles.formItem}
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
         />
         <label htmlFor="password" className={styles.formItem}>
           PASSWORD
@@ -40,6 +50,8 @@ function Login() {
           name="password"
           id={styles.password}
           className={styles.formItem}
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
         />
         <button type="submit" id={styles.login} className={styles.formItem}>
           LOGIN
@@ -48,5 +60,4 @@ function Login() {
     </div>
   );
 }
-
 export default Login;
