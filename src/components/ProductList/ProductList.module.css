@@ -1,0 +1,89 @@
+.container {
+  height: 100%;
+  overflow-y: scroll;
+  background-color: #dde6ed;
+  width: 100%;
+  padding: 1rem;
+}
+#listname{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.productName {
+  width: 100%;
+}
+
+.productNameList {
+  padding-inline-start: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: decimal;
+  padding: 1rem;
+}
+
+.productItem {
+  display: flex;
+  justify-content: space-between;
+}
+
+.productForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 1rem;
+  background-color: #9db2bf;
+  color: #27374d;
+  border-radius: 0.4rem;
+  margin: 1rem;
+}
+
+.formItem {
+  width: 100%;
+  margin: 0.3rem;
+  border: none;
+  text-decoration: none;
+  padding: 0.2rem;
+}
+.formItem > label{
+    margin:0.3rem;
+}
+
+.formItem > input{
+    margin:0.3rem;
+    width:30%;
+}
+
+.addBtn {
+  border-radius: 0.5rem;
+  border: none;
+  transition: all 0.2s;
+  width: 3.3rem;
+  font-weight: bold;
+  margin:0.3rem;    
+}
+
+.addBtn:hover {
+  background-color: #27374d;
+  color: white;
+  cursor: pointer;
+}
+
+.para {
+  color: #27374d;
+  padding: 1rem;
+}
+#bill{
+    text-decoration: none;
+    background-color: #27374d;
+    padding:0.6rem;
+    color:#dde6ed;
+    margin-top:2rem;
+    border-radius: 0.4rem;
+    transition: all 0.3s;
+}
+#bill:hover{
+    background-color: #9db2bf;
+    color:#27374d;
+    font-weight: bolder;
+}

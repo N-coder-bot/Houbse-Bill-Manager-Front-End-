@@ -1,9 +1,14 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import styles from "./ProductList.module.css";
 import axios from "axios";
 
 function ProductList({ user }) {
   const [products, setProducts] = useState([]);
+  const [name, setName] = useState("");
+  const [price, setPrice] = useState(0);
+  const [category, setCategory] = useState("grocery");
+  const [userId, setUserId] = useState(null);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -15,6 +20,7 @@ function ProductList({ user }) {
           }
         );
         setProducts(response.data.products);
+        setUserId(response.data.products[0].user);
       } catch (error) {
         console.error("Error fetching products:", error);
       }
@@ -23,19 +29,100 @@ function ProductList({ user }) {
     fetchProducts();
   }, []);
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const data = {
+      user: userId,
+      name,
+      price,
+      category,
+    };
+    try {
+      const response = await axios.post(
+        "http://localhost:8000/users/product/add",
+        data,
+        {
+          withCredentials: true,
+        }
+      );
+
+      // Update the products state with the newly added product
+      setProducts([...products, response.data.product]);
+
+      // Reset the form fields
+      setName("");
+      setPrice(0);
+      setCategory("grocery");
+    } catch (error) {
+      console.error("Error adding product:", error);
+    }
+  };
+
   return (
     <div className={styles.container}>
-      <ul className={styles.productList}>
-        {products.length != 0 ? (
-          products.map((product) => (
-            <li key={product._id} className={styles.productItem}>
-              {product.name}
-            </li>
-          ))
+      <div className={styles.productList}>
+        <h2 className={styles.heading}>Product List</h2>
+        {products.length !== 0 ? (
+          <ul className={styles.productNameList}>
+            {products.map((product) => (
+              <li key={product._id} className={styles.productItem}>
+                <div className={styles.productDetails}>
+                  <div className={styles.productName}>{product.name}</div>
+                  <div className={styles.productPrice}>
+                    Price: {product.price}
+                  </div>
+                </div>
+              </li>
+            ))}
+          </ul>
         ) : (
-          <p className={styles.para}>Please add atleast One Product </p>
+          <p className={styles.para}>Please add at least one product</p>
         )}
-      </ul>
+      </div>
+      <form className={styles.productForm} onSubmit={handleSubmit}>
+        <h2 className={styles.heading}>Add Product</h2>
+        <div className={styles.formItem}>
+          <label htmlFor="name">Name</label>
+          <input
+            type="text"
+            name="name"
+            value={name}
+            placeholder="Enter Product Name"
+            onChange={(e) => setName(e.target.value)}
+          />
+        </div>
+        <div className={styles.formItem}>
+          <label htmlFor="price">Price</label>
+          <input
+            type="number"
+            min="0"
+            name="price"
+            value={price}
+            onChange={(e) => setPrice(e.target.value)}
+            id="price"
+          />
+        </div>
+        <div className={styles.formItem}>
+          <label htmlFor="category">Category</label>
+          <select
+            name="category"
+            id="category"
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
+          >
+            <option value="grocery">grocery</option>
+            <option value="clothing">clothing</option>
+            <option value="healthcare">healthcare</option>
+            <option value="others">others</option>
+          </select>
+        </div>
+        <button type="submit" className={styles.addBtn}>
+          ADD
+        </button>
+      </form>
+      <Link to="/Bill" id={styles.bill}>
+        Calculate Bill
+      </Link>
     </div>
   );
 }
