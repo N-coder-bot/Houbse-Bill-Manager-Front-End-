@@ -1,4 +1,3 @@
-import Button from "../../components/Button/Button";
 import styles from "./Home.module.css";
 import { Link } from "react-router-dom";
 
@@ -10,10 +9,10 @@ function Home() {
       </div>
       <div className={styles.content}>
         <Link to="/login">
-          <Button name="LOGIN" />
+          <button className={styles.Button}>LOGIN</button>
         </Link>
         <Link to="/signup">
-          <Button name="SIGNUP" />
+          <button className={styles.Button}>SIGNUP</button>
         </Link>
       </div>
     </div>
