@@ -8,8 +8,9 @@ function Signup() {
       password: event.target.password.value,
     };
     const response = await axios.post(
-      "http://localhost:8000/users/user/signup",
-      data
+      "http://localhost:8000/users/signup",
+      data,
+      { withCredentials: true }
     );
     //add throw and catch statements later...
     alert("account created successfully! please login to continue...");
