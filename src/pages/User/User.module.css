@@ -1,0 +1,21 @@
+.container{
+    padding:1.2rem;
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    color:#27374D;
+    border:5px solid green;
+    height: 100vh;
+}
+#username{
+    color:#27374D;
+    background-color: #DDE6ED;
+    padding:0.3rem;
+    margin-left: 0.3rem;
+    font-weight: normal;
+}
+
+.productList{
+    margin: 2rem;
+    text-decoration: underline;
+}

@@ -7,7 +7,10 @@ const renderContent = (isAuthenticated, username) => {
   if (isAuthenticated)
     return (
       <div className={styles.container}>
-        <h1 className={styles.para}>Welcome, {username} !</h1>
+        <h1 className={styles.para}>
+          Welcome,<span id={styles.username}>{username}</span>
+        </h1>
+        <h1 className={styles.productList}>PRODUCTS LIST</h1>
         <ProductList />
       </div>
     );
