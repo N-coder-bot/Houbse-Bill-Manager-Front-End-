@@ -2,6 +2,7 @@ import styles from "./Bill.module.css";
 import { AuthContext } from "../../AuthContext";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
+import BillCalculator from "../../components/BillCalculator/BillCalculator";
 function Bill() {
   const monthNames = [
     "January",
@@ -24,6 +25,7 @@ function Bill() {
           <h1 className={styles.title}>
             Your {monthNames[new Date().getMonth()]} Month Bill
           </h1>
+          <BillCalculator />
         </div>
       );
     else
@@ -36,7 +38,6 @@ function Bill() {
   };
 
   const { isAuthenticated } = useContext(AuthContext);
-
   return <>{renderContent(isAuthenticated)}</>;
 }
 
