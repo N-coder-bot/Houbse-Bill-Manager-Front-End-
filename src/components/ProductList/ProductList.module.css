@@ -9,9 +9,6 @@
     font-size: 1.5rem;
     font-weight: bold;
 }
-.productName {
-  width: 100%;
-}
 
 .productNameList {
   padding-inline-start: 0;
@@ -20,11 +17,18 @@
   list-style: decimal;
   padding: 1rem;
 }
-
-.productItem {
-  display: flex;
-  justify-content: space-between;
+#productname{
+  display: inline-block;
+  width:20%;
+  text-align: left;
 }
+#productprice{
+  width:30%;
+  text-align: left;
+}
+
+
+
 
 .productForm {
   display: flex;

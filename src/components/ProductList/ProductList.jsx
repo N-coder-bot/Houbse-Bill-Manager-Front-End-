@@ -67,9 +67,9 @@ function ProductList({ user }) {
             {products.map((product) => (
               <li key={product._id} className={styles.productItem}>
                 <div className={styles.productDetails}>
-                  <div className={styles.productName}>{product.name}</div>
-                  <div className={styles.productPrice}>
-                    Price: {product.price}
+                  <div className={styles.productContainer}>
+                    <span id={styles.productname}>{product.name}</span>
+                    <span id={styles.productprice}>{product.price}₹</span>
                   </div>
                 </div>
               </li>
