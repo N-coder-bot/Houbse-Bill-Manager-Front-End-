@@ -16,7 +16,7 @@ function Signup() {
     };
     try {
       const response = await axios.post(
-        "https://BillEaseExpress/users/signup",
+        "https://billeaseexpress.onrender.com/users/signup",
         data,
         {
           withCredentials: true,

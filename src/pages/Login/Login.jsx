@@ -21,7 +21,7 @@ function Login() {
         password: password,
       };
       const response = await axios.post(
-        "https://BillEaseExpress/users/login/password",
+        "https://billeaseexpress.onrender.com/users/login/password",
         data,
         { withCredentials: true }
       );

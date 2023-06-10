@@ -5,7 +5,7 @@ import axios from "axios";
 function Logout() {
   const { isAuthenticated } = useContext(AuthContext);
   const handleLogout = async () => {
-    await axios.get("https://BillEaseExpress/users/logout", {
+    await axios.get("https://billeaseexpress.onrender.com/users/logout", {
       withCredentials: true,
     });
     window.location.href = "/";

@@ -14,7 +14,7 @@ function ProductList({ user }) {
     const fetchProducts = async () => {
       try {
         const response = await axios.get(
-          "https://BillEaseExpress/users/products",
+          "https://billeaseexpress.onrender.com/users/products",
           {
             withCredentials: true,
           }
@@ -39,7 +39,7 @@ function ProductList({ user }) {
     };
     try {
       const response = await axios.post(
-        "https://BillEase/users/product/add",
+        "https://billeaseexpress.onrender.com/users/product/add",
         data,
         {
           withCredentials: true,
@@ -64,7 +64,7 @@ function ProductList({ user }) {
     const updatedProducts = products.filter((product) => product._id !== _id);
 
     const response = await axios.delete(
-      "https://BillEase/users/product/delete",
+      "https://billeaseexpress.onrender.com/users/product/delete",
       {
         data,
         withCredentials: true,
