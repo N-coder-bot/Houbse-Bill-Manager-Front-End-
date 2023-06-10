@@ -17,7 +17,7 @@ function BillCalculator() {
             withCredentials: true,
           }
         );
-        console.log("umm HAHAHAHA");
+        console.log(billResponse.data.user);
         setbillAmount(billResponse.data.user.billAmount);
         const updatedata = billResponse.data.user;
         setuser(updatedata);
@@ -26,22 +26,23 @@ function BillCalculator() {
       }
     };
     fetchData();
-  }, []);
+  }, [billAmount]);
   const getCategories = () => {
     const updateData = { grocery: 0, healthcare: 0, clothing: 0, others: 0 };
     // console.log(user.products);
     user.products.forEach((product) => {
       updateData[product.category] += product.price;
     });
-    console.log(updateData);
     setCategories(updateData);
     setVisible(!visible);
   };
   return (
     <div className={styles.container}>
       <div className={styles.content}>
-        <h1>Total Amount: {billAmount}</h1>
-        <button onClick={getCategories}>Bite me</button>
+        <h2 className={styles.title}>Total Amount: {billAmount}</h2>
+        <button className={styles.piebtn} onClick={getCategories}>
+          Generate Graph
+        </button>
         {!visible ? <></> : <Piechart categories={categories} />}
       </div>
     </div>
