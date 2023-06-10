@@ -9,17 +9,17 @@ function Piechart({ categories }) {
     {
       name: "grocery",
       value: categories["grocery"],
-      color: "#8884d8",
+      color: "#27374D",
     },
     {
       name: "clothing",
       value: categories["clothing"],
-      color: "#82ca9d",
+      color: "#526D82",
     },
     {
       name: "healthcare",
       value: categories["healthcare"],
-      color: "#ffc658",
+      color: "black",
     },
     {
       name: "others",
