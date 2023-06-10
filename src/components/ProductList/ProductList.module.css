@@ -1,9 +1,13 @@
 .container {
   height: 100%;
-  overflow-y: scroll;
   background-color: #dde6ed;
+  overflow-y: scroll;
   width: 100%;
   padding: 1rem;
+  margin: 0 auto;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
 }
 #listname{
     font-size: 1.5rem;
@@ -15,15 +19,25 @@
   margin: 0;
   text-decoration: none;
   list-style: decimal;
-  padding: 1rem;
+  padding: 3rem;
+  border-radius: 0.4rem;
+  background-color: #27374d;
+  color:#dde6ed;
+  font-size: 1.3rem;
+  font-weight: light;
+  text-transform:capitalize;
+  margin: 1rem;
 }
 #productname{
   display: inline-block;
   width:20%;
   text-align: left;
+  margin:1rem;
 }
 #productprice{
-  width:30%;
+  margin:1rem;
+  width:10%;
+  display: inline-block;
   text-align: left;
 }
 
@@ -40,24 +54,37 @@
   color: #27374d;
   border-radius: 0.4rem;
   margin: 1rem;
+  max-width: 600px;
+
 }
 
 .formItem {
   width: 100%;
-  margin: 0.3rem;
+  margin: 0.5rem;
   border: none;
   text-decoration: none;
   padding: 0.2rem;
+  /* display: inline-block; */
 }
 .formItem > label{
-    margin:0.3rem;
+  margin:0.3rem;
+  font-size: large;
+  display: inline-block;
+  width:20%;
 }
 
 .formItem > input{
-    margin:0.3rem;
-    width:30%;
+  margin:0.3rem;
+  padding:0.3rem;
+  width:30%;
+  border:none;
+  outline: none;
 }
-
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 .addBtn {
   border-radius: 0.5rem;
   border: none;
@@ -82,12 +109,18 @@
     background-color: #27374d;
     padding:0.6rem;
     color:#dde6ed;
-    margin-top:2rem;
     border-radius: 0.4rem;
     transition: all 0.3s;
+    width: 16%;
+    margin-left: 1rem;
+
 }
 #bill:hover{
     background-color: #9db2bf;
     color:#27374d;
     font-weight: bolder;
+}
+.heading{
+  text-align: center;
+  text-transform: uppercase;
 }
