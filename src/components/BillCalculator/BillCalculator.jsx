@@ -17,7 +17,7 @@ function BillCalculator() {
             withCredentials: true,
           }
         );
-        console.log(billResponse.data.user);
+
         setbillAmount(billResponse.data.user.billAmount);
         const updatedata = billResponse.data.user;
         setuser(updatedata);
@@ -33,6 +33,7 @@ function BillCalculator() {
     user.products.forEach((product) => {
       updateData[product.category] += product.price;
     });
+
     setCategories(updateData);
     setVisible(!visible);
   };
