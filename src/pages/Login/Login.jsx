@@ -28,6 +28,7 @@ function Login() {
       console.log(response);
       window.location.href = `/user/${response.data.user.username}`;
     } catch (err) {
+      console.log(err);
       seterror(true);
     }
   };
