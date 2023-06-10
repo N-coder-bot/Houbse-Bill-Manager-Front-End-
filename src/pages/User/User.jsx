@@ -3,12 +3,12 @@ import { AuthContext } from "../../AuthContext";
 import { useContext, useEffect } from "react";
 import styles from "./User.module.css";
 import ProductList from "../../components/ProductList/ProductList";
-const renderContent = (isAuthenticated, username) => {
+const renderContent = (isAuthenticated, user) => {
   if (isAuthenticated)
     return (
       <div className={styles.container}>
         <h1 className={styles.para}>
-          Welcome,<span id={styles.username}>{username}</span>
+          Welcome,<span id={styles.username}>{user.username}</span>
         </h1>
         <h1 className={styles.productList}>PRODUCTS LIST</h1>
         <ProductList />
@@ -23,10 +23,8 @@ const renderContent = (isAuthenticated, username) => {
     );
 };
 function User() {
-  const { username } = useParams();
-  const { isAuthenticated } = useContext(AuthContext);
-
-  return <>{renderContent(isAuthenticated, username)}</>;
+  const { isAuthenticated, user } = useContext(AuthContext);
+  return <>{renderContent(isAuthenticated, user)}</>;
 }
 
 export default User;
