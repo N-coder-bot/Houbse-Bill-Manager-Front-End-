@@ -57,7 +57,21 @@ function ProductList({ user }) {
       console.error("Error adding product:", error);
     }
   };
+  const handleDelete = async (e) => {
+    const _id = e.target.id;
+    const price = Number(e.target.name);
+    const data = { _id, price };
+    const updatedProducts = products.filter((product) => product._id !== _id);
 
+    const response = await axios.delete(
+      "http://localhost:8000/users/product/delete",
+      {
+        data,
+        withCredentials: true,
+      }
+    );
+    setProducts(updatedProducts);
+  };
   return (
     <div className={styles.container}>
       <div className={styles.productList}>
@@ -66,11 +80,16 @@ function ProductList({ user }) {
           <ul className={styles.productNameList}>
             {products.map((product) => (
               <li key={product._id} className={styles.productItem}>
-                <div className={styles.productDetails}>
-                  <div className={styles.productContainer}>
-                    <span id={styles.productname}>{product.name}</span>
-                    <span id={styles.productprice}>{product.price}₹</span>
-                  </div>
+                <div className={styles.productContainer}>
+                  <span id={styles.productname}>{product.name}</span>
+                  <span id={styles.productprice}>{product.price}₹</span>
+                  <button
+                    onClick={handleDelete}
+                    id={product._id}
+                    name={product.price}
+                  >
+                    delete
+                  </button>
                 </div>
               </li>
             ))}
