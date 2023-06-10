@@ -16,9 +16,11 @@ function Signup() {
     };
     try {
       const response = await axios.post(
-        "http://localhost:8000/users/signup",
+        "https://BillEaseExpress/users/signup",
         data,
-        { withCredentials: true }
+        {
+          withCredentials: true,
+        }
       );
       //add throw and catch statements later...
       alert("account created successfully! please login to continue...");

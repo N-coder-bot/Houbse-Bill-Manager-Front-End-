@@ -12,8 +12,10 @@ export const AuthProvider = ({ children }) => {
     const checkAuthStatus = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8000/users/checkAuth",
-          { withCredentials: true }
+          "https://BillEaseExpress/users/checkAuth",
+          {
+            withCredentials: true,
+          }
         ); // Make a request to your backend route to check authentication status
         if (response.data.msg === "logged in") {
           setIsAuthenticated(true);

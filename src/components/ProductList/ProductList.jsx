@@ -14,7 +14,7 @@ function ProductList({ user }) {
     const fetchProducts = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8000/users/products",
+          "https://BillEaseExpress/users/products",
           {
             withCredentials: true,
           }
@@ -39,7 +39,7 @@ function ProductList({ user }) {
     };
     try {
       const response = await axios.post(
-        "http://localhost:8000/users/product/add",
+        "https://BillEase/users/product/add",
         data,
         {
           withCredentials: true,
@@ -64,7 +64,7 @@ function ProductList({ user }) {
     const updatedProducts = products.filter((product) => product._id !== _id);
 
     const response = await axios.delete(
-      "http://localhost:8000/users/product/delete",
+      "https://BillEase/users/product/delete",
       {
         data,
         withCredentials: true,
