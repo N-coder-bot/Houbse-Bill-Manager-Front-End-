@@ -1,5 +1,17 @@
 .logoutBtn{
     position: absolute;
-    right:0;
-    margin:3rem;
+    top:5%;
+    right:2%;
+    margin:0.5rem;
+    cursor: pointer;
+    background-color: white;
+    color:black;
+    border:none;
+    border-radius: 0.2rem;
+    padding:0.5rem;
+    transition: all 0.2s;
+}
+.logoutBtn:hover{
+    background-color: black;
+    color:white;
 }
