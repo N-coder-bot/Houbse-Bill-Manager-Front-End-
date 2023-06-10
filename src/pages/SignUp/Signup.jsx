@@ -1,5 +1,5 @@
 import axios from "axios";
-import styles from "./Signup.module.css";
+import styles from "./SignUp.module.css";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../AuthContext";
 function Signup() {
