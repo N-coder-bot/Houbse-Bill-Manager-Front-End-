@@ -1,12 +1,16 @@
 import styles from "./Login.module.css";
 import axios from "axios";
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { AuthContext } from "../../AuthContext";
 
 function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const { isAuthenticated } = useContext(AuthContext);
+  const [error, seterror] = useState(false);
+  const { isAuthenticated, user } = useContext(AuthContext);
+  useEffect(() => {
+    if (isAuthenticated) window.location.href = `/user/${user.username}`;
+  });
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -24,12 +28,14 @@ function Login() {
       console.log(response);
       window.location.href = `/user/${response.data.user.username}`;
     } catch (err) {
-      console.log(err);
+      seterror(true);
     }
   };
 
   return (
     <div className={styles.container}>
+      <h1 className={styles.title}>Login!</h1>
+
       <form onSubmit={handleSubmit} id={styles.form}>
         <label htmlFor="username" className={styles.formItem}>
           USERNAME
@@ -57,6 +63,13 @@ function Login() {
           LOGIN
         </button>
       </form>
+      {error ? (
+        <div className={styles.error}>
+          Either Username or Password Entered is incorrect!
+        </div>
+      ) : (
+        <></>
+      )}
     </div>
   );
 }
