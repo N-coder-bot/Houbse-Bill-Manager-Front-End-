@@ -26,7 +26,7 @@ function Login() {
         data,
         { withCredentials: true }
       );
-      // console.log(response);
+      console.log(response);
       window.location.href = `/user/${response.data.user.username}`;
     } catch (err) {
       console.log(err);
