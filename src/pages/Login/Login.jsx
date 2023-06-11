@@ -23,7 +23,7 @@ function Login() {
       // https://house-bill-manager-production.up.railway.app
       const response = await axios.post(
         "https://house-bill-manager-production.up.railway.app/users/login/password",
-        { data },
+        data,
         { withCredentials: true }
       );
       console.log(response);
