@@ -12,7 +12,7 @@ export const AuthProvider = ({ children }) => {
     const checkAuthStatus = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8000/users/checkAuth",
+          "https://house-bill-manager-production.up.railway.app/users/checkAuth",
           {
             withCredentials: true,
           }

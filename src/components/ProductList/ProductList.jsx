@@ -14,7 +14,7 @@ function ProductList({ user }) {
     const fetchProducts = async () => {
       try {
         const response = await axios.get(
-          "https://billeaseexpress.onrender.com/users/products",
+          "https://house-bill-manager-production.up.railway.app/users/products",
           {
             withCredentials: true,
           }
@@ -39,7 +39,7 @@ function ProductList({ user }) {
     };
     try {
       const response = await axios.post(
-        "https://billeaseexpress.onrender.com/users/product/add",
+        "https://house-bill-manager-production.up.railway.app/users/product/add",
         data,
         {
           withCredentials: true,
@@ -64,7 +64,7 @@ function ProductList({ user }) {
     const updatedProducts = products.filter((product) => product._id !== _id);
 
     const response = await axios.delete(
-      "https://billeaseexpress.onrender.com/users/product/delete",
+      "https://house-bill-manager-production.up.railway.app/users/product/delete",
       {
         data,
         withCredentials: true,

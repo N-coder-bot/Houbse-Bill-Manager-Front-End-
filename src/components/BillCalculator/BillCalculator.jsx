@@ -12,7 +12,7 @@ function BillCalculator() {
     const fetchData = async () => {
       try {
         const billResponse = await axios.get(
-          "https://billeaseexpress.onrender.com/users/products/bill",
+          "https://house-bill-manager-production.up.railway.app/users/products/bill",
           {
             withCredentials: true,
           }
