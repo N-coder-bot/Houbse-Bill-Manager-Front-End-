@@ -20,8 +20,9 @@ function Login() {
         username: username,
         password: password,
       };
+      // https://house-bill-manager-production.up.railway.app
       const response = await axios.post(
-        "https://house-bill-manager-production.up.railway.app/users/login/password",
+        "http://localhost:8000/users/login/password",
         data,
         { withCredentials: true }
       );
