@@ -24,7 +24,7 @@ function Login() {
       const response = await axios.post(
         "https://house-bill-manager-production.up.railway.app/users/login/password",
         data,
-        { withCredentials: true }
+        { withCredentials: true, data: "include" }
       );
       console.log(response);
       window.location.href = `/user/${response.data.user.username}`;
