@@ -12,7 +12,7 @@ export const AuthProvider = ({ children }) => {
     const checkAuthStatus = async () => {
       try {
         const response = await axios.get(
-          "https://billeaseexpress.onrender.com/users/checkAuth",
+          "http://localhost:8000/users/checkAuth",
           {
             withCredentials: true,
           }
