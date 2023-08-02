@@ -39,7 +39,7 @@ function ProductList({ user }) {
     };
     try {
       const response = await axios.post(
-        "https://house-bill-manager-production.up.railway.app/users/product/add",
+        "https://hbm.onrender.com/users/product/add",
         data,
         {
           withCredentials: true,
