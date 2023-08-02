@@ -14,7 +14,7 @@ function ProductList({ user }) {
     const fetchProducts = async () => {
       try {
         const response = await axios.get(
-          "https://house-bill-manager-production.up.railway.app/users/products",
+          "https://hbm.onrender.com/users/products",
           {
             withCredentials: true,
           }
