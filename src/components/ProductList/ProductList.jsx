@@ -64,7 +64,7 @@ function ProductList({ user }) {
     const updatedProducts = products.filter((product) => product._id !== _id);
 
     const response = await axios.delete(
-      "https://house-bill-manager-production.up.railway.app/users/product/delete",
+      "https://hbm.onrender.com/users/product/delete",
       {
         data,
         withCredentials: true,

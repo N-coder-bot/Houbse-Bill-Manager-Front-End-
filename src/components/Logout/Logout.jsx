@@ -5,12 +5,9 @@ import axios from "axios";
 function Logout() {
   const { isAuthenticated } = useContext(AuthContext);
   const handleLogout = async () => {
-    await axios.get(
-      "https://house-bill-manager-production.up.railway.app/users/logout",
-      {
-        withCredentials: true,
-      }
-    );
+    await axios.get("https://hbm.onrender.com/users/logout", {
+      withCredentials: true,
+    });
     window.location.href = "/";
   };
   return isAuthenticated ? (

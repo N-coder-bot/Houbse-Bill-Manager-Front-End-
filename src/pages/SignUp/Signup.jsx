@@ -16,7 +16,7 @@ function Signup() {
     };
     try {
       const response = await axios.post(
-        "https://house-bill-manager-production.up.railway.app/users/signup",
+        "https://hbm.onrender.com/users/signup",
         data,
         {
           withCredentials: true,

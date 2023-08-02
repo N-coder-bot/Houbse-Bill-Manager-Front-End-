@@ -22,7 +22,7 @@ function Login() {
       };
       // https://house-bill-manager-production.up.railway.app
       const response = await axios.post(
-        "https://house-bill-manager-production.up.railway.app/users/login/password",
+        "https://hbm.onrender.com/users/login/password",
         data,
         { withCredentials: true, data: "include" }
       );

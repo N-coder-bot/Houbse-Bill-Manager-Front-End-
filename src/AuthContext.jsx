@@ -12,7 +12,7 @@ export const AuthProvider = ({ children }) => {
     const checkAuthStatus = async () => {
       try {
         const response = await axios.get(
-          "https://house-bill-manager-production.up.railway.app/users/checkAuth",
+          "https://hbm.onrender.com/users/checkAuth",
           {
             withCredentials: true,
           }
